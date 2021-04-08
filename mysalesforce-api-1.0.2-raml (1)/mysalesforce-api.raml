@@ -1,0 +1,29 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/08acb54f-5208-4cb5-8c98-3a091c5bbc4f # 
+title: MySalesforce API
+version: 1.0
+mediaType: 
+- application/json
+securitySchemes:
+  basic: !include Common/securityScheme.raml
+traits:
+    Special_trait: !include Common/trait.raml
+types:
+  simpleTppe: !include Datatypes/dataType.raml
+  complextype: !include  Datatypes/complex_dataType.raml
+
+/employeeList:
+  description: This method helps us to add or retrive employee list
+  post:
+    description: This call retrive the employee info
+    body:
+      application/json:
+        example: !include Examples/employee.json
+        type: complextype
+    responses:
+      201:
+        body:
+          application/json:
+             examples: 
+                 {"message" : "Retrived"}    
+          

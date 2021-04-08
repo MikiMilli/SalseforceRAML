@@ -1,0 +1,15 @@
+#%RAML 1.0 Library
+types:
+  employeeList:
+    displayName: complexJsonType
+    properties:
+      employee_details:
+        type: array
+        items:
+          type: object
+          properties:
+            employee_id: number
+            name: string
+      company: string
+      joined: string
+      previous_company: string  
